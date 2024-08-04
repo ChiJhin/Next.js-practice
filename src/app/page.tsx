@@ -8,6 +8,9 @@ export default function Home() {
       <StatusLabel status={Status.NotActive}>Not Active</StatusLabel>
       <StatusLabel status={Status.Pending}>Pending</StatusLabel>
       <StatusLabel status={Status.Suspended}>Suspended</StatusLabel>
+      <StatusLabel status={Status.NotActive} disabled={true}>
+        Suspended
+      </StatusLabel>
     </main>
   );
 }
