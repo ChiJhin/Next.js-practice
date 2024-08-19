@@ -1,5 +1,6 @@
 import AddCompanyButton from './components/add-company-button';
 import StatusLabel, { Status } from './components/status-label';
+import Link from 'next/link';
 
 export default function Home() {
   return (
@@ -14,7 +15,7 @@ export default function Home() {
           Suspended
         </StatusLabel>
         <AddCompanyButton />
-        <a href="/companies">Companies</a>
+        <Link href="/companies">Companies</Link>
       </div>
     </main>
   );
