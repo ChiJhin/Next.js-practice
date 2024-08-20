@@ -1,6 +1,5 @@
 import React from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
 import clsx from 'clsx';
 import StatusLabel, { Status } from '@/app/components/status-label';
 
@@ -36,7 +35,7 @@ export default function CompanyRow({
         {category}
       </td>
       <td>
-        <Link href={`/companies/${id}`}>{company}</Link>
+        <a href={`/companies/${id}`}>{company}</a>
       </td>
       <td>
         <StatusLabel status={status}>{labelByStatus[status]}</StatusLabel>
