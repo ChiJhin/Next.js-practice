@@ -61,6 +61,9 @@ export default function CompanyForm({ onSubmit }: CompanyFormProps) {
   });
 
   const handleSubmit = async (values: CompanyFieldValues) => {
+    if (!categories || !countries) {
+      return;
+    }
     await mutateAsync({
       ...values,
       categoryTitle:
@@ -86,7 +89,6 @@ export default function CompanyForm({ onSubmit }: CompanyFormProps) {
               label="Status"
               placeholder="Status"
               name="status"
-              as="select"
             >
               {(Object.values(CompanyStatus) as CompanyStatus[]).map(
                 (status) => (
@@ -101,7 +103,6 @@ export default function CompanyForm({ onSubmit }: CompanyFormProps) {
               label="Country"
               placeholder="Country"
               name="countryId"
-              as="select"
             >
               {countries?.map((country) => (
                 <option key={country.id} value={country.id}>
@@ -117,7 +118,6 @@ export default function CompanyForm({ onSubmit }: CompanyFormProps) {
               label="Category"
               placeholder="Category"
               name="categoryId"
-              as="select"
             >
               {categories?.map((category) => (
                 <option key={category.id} value={category.id}>
