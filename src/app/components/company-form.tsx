@@ -86,9 +86,10 @@ export default function CompanyForm({ onSubmit }: CompanyFormProps) {
             <LogoUploader label="Logo" placeholder="Upload photo" />
             <InputField
               required
-              label="Status"
-              placeholder="Status"
+              label="Статус"
+              id="status"
               name="status"
+              as="select"
             >
               {(Object.values(CompanyStatus) as CompanyStatus[]).map(
                 (status) => (
@@ -101,8 +102,10 @@ export default function CompanyForm({ onSubmit }: CompanyFormProps) {
             <InputField
               required
               label="Country"
+              id="countryId"
               placeholder="Country"
               name="countryId"
+              as="select"
             >
               {countries?.map((country) => (
                 <option key={country.id} value={country.id}>
@@ -116,8 +119,10 @@ export default function CompanyForm({ onSubmit }: CompanyFormProps) {
             <InputField
               required
               label="Category"
+              id="categoryId"
               placeholder="Category"
               name="categoryId"
+              as="select"
             >
               {categories?.map((category) => (
                 <option key={category.id} value={category.id}>
@@ -128,12 +133,14 @@ export default function CompanyForm({ onSubmit }: CompanyFormProps) {
             <InputField
               required
               label="Joined date"
+              id="joinedDate"
               type="date"
               name="joinedDate"
             />
             <InputField
               required
               label="Description"
+              id="description"
               placeholder="Description"
               name="description"
             />
